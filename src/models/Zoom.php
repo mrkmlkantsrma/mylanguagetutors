@@ -8,9 +8,9 @@ class Zoom
     public function createMeeting($username, $dateTime, $userTimezone = 'America/Los_Angeles')
     {
         // Set your Zoom API credentials
-        $accountID = 'q2zXPLjgQCCbepKpOY2sxw';
-        $clientID = 'hcnUDgf5QaatR7yiddsZUw';
-        $clientSecret = 'eVrxPEkkvmQeU1GIriVVDbAD93n6f54O';
+        $accountID = 'xxxxxxxxxxxx';
+        $clientID = 'xxxxxxxxxxxxxxxx';
+        $clientSecret = 'xxxxxxxxxxxxxxxxxx';
 
         // Prepare the authorization header
         $authHeader = base64_encode($clientID . ':' . $clientSecret);
