@@ -53,11 +53,6 @@ error_reporting(E_ALL);
                                 <li>
                                     <a href="mailto:contact@mylanguagetutor.ca"><i class="fa-solid fa-envelope"></i>contact@mylanguagetutor.ca</a>
                                 </li>
-                                <li>
-                                    <a href="#"><i class="fa-solid fa-compass"></i>My Language Tutor is registered in the province of Québec under this legal name: 9488-5381 Québec inc.</a>
-                                </li>
-
-                                
                             </ul>
                         </div>
                         <div class="contact-left mt-3">

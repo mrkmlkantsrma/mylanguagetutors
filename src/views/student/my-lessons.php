@@ -211,7 +211,7 @@ if (isset($_SESSION['user_data'])) {
                     <div class="col-sm-6 col-lg-3">
                         <div class="info-box">
                             <span class="info-icon"><i class="fa-solid fa-video"></i></span>
-                            <h3>Zoom</h3>
+                            <h3>Teams</h3>
                             <?php if (isset($GLOBALS['bookings'][0]['zoom_link'])): ?>
                             <h4><a id="zoom_link" href="<?php echo $GLOBALS['bookings'][0]['zoom_link']; ?>" target="_blank" style="pointer-events: none; color: gray;">Join Now</a></h4>
                             <?php endif; ?>

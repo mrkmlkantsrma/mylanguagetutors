@@ -108,7 +108,9 @@ $tutors = $user->getTutorsData($language);
                                         <a class="site-link" href="/src/views/student/profile">Hi, <?php echo $_SESSION['username']; ?></a>
                                     <?php }else if($_SESSION['role'] == 'Tutor'){ ?>
                                         <a class="site-link" href="/src/views/tutor/profile">Hi, <?php echo $_SESSION['username']; ?></a>
-                                    <?php } ?>
+                                    <?php }else if($_SESSION['role'] == 'Admin'){ ?>
+                                        <a class="site-link" href="/src/views/admin/overview">Hi, <?php echo $_SESSION['username']; ?></a>
+                                    <?php }?>
                                 <?php }else{ ?>
                                     <a class="site-link" href="login">Login</a>
                                 <?php } ?>

@@ -1,0 +1,31 @@
+[13-May-2024 12:28:09 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mylanguagetutor`.`GroupClasses`, CONSTRAINT `groupclasses_ibfk_1` FOREIGN KEY (`tutor_id`) REFERENCES `all_users` (`id`) ON DELETE SET NULL) in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php:92
+Stack trace:
+#0 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php(92): PDOStatement->execute()
+#1 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/groupClassController.php(288): GroupClass->updateGroupClass()
+#2 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/groupClassController.php(479): GroupClassController->update()
+#3 {main}
+  thrown in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php on line 92
+[13-May-2024 12:29:24 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mylanguagetutor`.`GroupClasses`, CONSTRAINT `groupclasses_ibfk_1` FOREIGN KEY (`tutor_id`) REFERENCES `all_users` (`id`) ON DELETE SET NULL) in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php:92
+Stack trace:
+#0 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php(92): PDOStatement->execute()
+#1 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/groupClassController.php(288): GroupClass->updateGroupClass()
+#2 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/groupClassController.php(479): GroupClassController->update()
+#3 {main}
+  thrown in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php on line 92
+[13-May-2024 12:34:33 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mylanguagetutor`.`GroupClasses`, CONSTRAINT `groupclasses_ibfk_1` FOREIGN KEY (`tutor_id`) REFERENCES `all_users` (`id`) ON DELETE SET NULL) in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php:92
+Stack trace:
+#0 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php(92): PDOStatement->execute()
+#1 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/groupClassController.php(288): GroupClass->updateGroupClass()
+#2 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/groupClassController.php(479): GroupClassController->update()
+#3 {main}
+  thrown in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/groupClass.php on line 92
+[13-May-2024 12:40:16 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mylanguagetutor`.`GroupClasses`, CONSTRAINT `groupclasses_ibfk_1` FOREIGN KEY (`tutor_id`) REFERENCES `all_users` (`id`) ON DELETE SET NULL) in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/TutorGroupClass.php:92
+Stack trace:
+#0 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/TutorGroupClass.php(92): PDOStatement->execute()
+#1 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/TutorGroupClassController.php(288): TutorGroupClass->updateGroupClass()
+#2 /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/TutorGroupClassController.php(479): TutorGroupClassController->update()
+#3 {main}
+  thrown in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/models/TutorGroupClass.php on line 92
+[13-May-2024 13:00:44 UTC] PHP Warning:  Undefined array key "tutor" in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/TutorGroupClassController.php on line 108
+[13-May-2024 13:00:44 UTC] PHP Warning:  Undefined array key "tutor" in /home/zse0xqz89aou/public_html/mylanguagetutor.devtechytrion.com/src/controllers/TutorGroupClassController.php on line 134
+[13-May-2024 13:05:44 UTC] Mailer Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server

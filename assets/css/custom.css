@@ -1135,7 +1135,7 @@ select.inp {
 .register-container {
     width: 1000px;
     margin: 0 auto;
-    padding: 20px 50px 20px 50px;
+    padding: 0px 50px 10px 50px;
 }
 
 .inp-wrap.small .inp {
@@ -2329,8 +2329,7 @@ h3.title {
         width: 100%
     }
     .login-wrap.for-register {
-        padding-top: 0px;
-        margin-bottom: 20px;
+        padding-top: 00px
     }
     .img-single-txt {
         padding: 50px 15px;
@@ -2556,7 +2555,6 @@ a.register_with_btn {
     padding-left: calc(var(--bs-gutter-x)* .5);
     display: flex;
     justify-content: center;
-    padding-top: 20px;
 }
 .social_login_box {
     padding: 0 60px 0 60px;

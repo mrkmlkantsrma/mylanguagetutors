@@ -232,6 +232,31 @@ img {
     transition: border 3s ease-out;
 }
 
+.enrolled-groupclass-view {
+    display: inline-block;
+    cursor: pointer;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    text-align: center;
+    padding: 7px 17px;
+    border: 1px solid var(--primary);
+}
+.enrolled-groupclass-view:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+    border: 1px solid var(--secondary);
+}
+.inp-wrap.sm label {
+    font-weight: bold;
+}
+.page-title .meeting-details-heading {
+    font-weight: 600;
+    font-size: 24px;
+    padding: 0 0 20px 0;
+}
 
 @media (max-width:1023px) {
     .groupClassList {

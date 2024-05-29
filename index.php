@@ -88,7 +88,6 @@ $conn = $database->dbConnection();
                                 <h2>Discover MyLanguageTutor</h2>
                                 <p>We are Canada's leading platform for second language tutoring, bridging the gap between passionate language tutors and enthusiastic learners.</p>
                                 <p>We believe in making language learning accessible to everyone, offering competitive rates for students and fair compensation for our tutors.</p>
-                                <p>My Language Tutor is registered in the province of Québec under this legal name: 9488-5381 Québec inc.</p>
                                 <?php if(!empty($_SESSION['user_id'])) { ?>
                                     <?php if($_SESSION['role'] == 'Student'){ ?>
                                         <a class="site-link mt-4" href="/src/views/student/my-lessons">Become a Tutor Today</a>
@@ -302,28 +301,7 @@ $conn = $database->dbConnection();
 
 <?php
 /********************* SingUp with Google Sec *******************************/ 
-if($_SESSION['requested_page'] == '/login.php' || $_SESSION['requested_page'] == '/login' || $_SESSION['requested_page'] == '/register.php' || $_SESSION['requested_page'] == '/register'){
-    
 
-    ?><script>
-    jQuery(document).ready(function() {
-        if (window.location.search.indexOf('code=') == -1) {
-            var baseUrl = window.location.origin + window.location.pathname;
-            var role = '<?php echo $_SESSION['role']; ?>';
-            if(role == 'Student'){
-                window.location.href = baseUrl + 'src/views/student/profile';
-            }else if(role == 'Tutor'){
-                window.location.href = baseUrl + 'src/views/tutor/profile';
-            }else{
-                window.location.href = baseUrl;
-            }
-        }
-    });
-    </script><?php
-    if( $_SESSION['user_id']){
-        $_SESSION['requested_page'] = '';
-    }
-}
 
 if(isset($_GET['code']))
 {

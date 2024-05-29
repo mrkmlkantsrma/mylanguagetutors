@@ -358,6 +358,8 @@ if(isset($_SESSION['username'])) {
 
                     </li>
 
+                    <li><a class="active" href="group-classes"><i class="fa-solid fa-user-group"></i><span>Group Classes</span></a></li>
+
                     <li>
 
                         <a href="earnings-payment"><i class="fa-regular fa-credit-card"></i> <span>Earnings & payments</span></a>

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/Database.php';
 
-class GroupClass{
+class TutorGroupClass{
     private $conn;
 
     public function __construct()
@@ -25,14 +25,23 @@ class GroupClass{
         }
     }
 
-    public function getTutors() {
+    public function getTutors() 
+    {
         $query = "SELECT id, username, email FROM all_users WHERE role = 'Tutor'";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getAllGroupClasses() {
+    public function getCurrentTutors($tutorID) 
+    {
+        $query = "SELECT id, username, email FROM all_users WHERE id = ".$tutorID."";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function TutorGetAllGroupClasses() {
         try {
             // Access student_id from session
             $student_id = isset($_SESSION['student_id']) ? $_SESSION['student_id'] : null;
@@ -69,7 +78,7 @@ class GroupClass{
         }
     }    
     
-    public function getGroupClassById($class_id) {
+    public function TutorGetGroupClassById($class_id) {
         try {
             $query = "SELECT * FROM GroupClasses WHERE class_id = ?";
             $stmt = $this->conn->prepare($query);
@@ -80,23 +89,51 @@ class GroupClass{
         }
     }
 
-    public function updateGroupClass($class_id, $title, $description, $first_day, $first_time, $second_day, $second_time, $number_of_classes, $duration, $tutor, $pricing, $cover_image_path) {
+    // public function updateGroupClass($class_id, $title, $description, $first_day, $first_time, $second_day, $second_time, $number_of_classes, $duration, $tutor, $pricing, $cover_image_path) 
+    // {
+    //     try {
+    //         $query = "UPDATE GroupClasses SET 
+    //                     title = ?, description = ?, first_day = ?, first_time = ?, 
+    //                     second_day = ?, second_time = ?, number_of_classes = ?, 
+    //                     duration = ?, tutor_id = ?, pricing = ?, cover_image_path = ?, status = 'Active'
+    //                   WHERE class_id = ?";
+    
+    //         $stmt = $this->conn->prepare($query);
+    //         $stmt->execute([$title, $description, $first_day, $first_time, $second_day, $second_time, $number_of_classes, $duration, $tutor, $pricing, $cover_image_path, $class_id]);
+    
+    //         return true;
+    //     } catch(PDOException $e) {
+    //         // Throw the exception again so the controller can catch it
+    //         throw $e;
+    //     }
+    // }
+
+    public function updateGroupClass($class_id, $title, $description, $first_day, $first_time, $second_day, $second_time, $number_of_classes, $duration, $tutor, $pricing, $cover_image_path) 
+    {
         try {
+            // Check if the tutor exists in the all_users table
+            $queryCheckTutor = "SELECT COUNT(*) FROM all_users WHERE id = ?";
+            $stmtCheckTutor = $this->conn->prepare($queryCheckTutor);
+            $stmtCheckTutor->execute([$tutor]);
+            $tutorExists = $stmtCheckTutor->fetchColumn();
+
+            // Update the GroupClasses table conditionally based on tutor existence
             $query = "UPDATE GroupClasses SET 
                         title = ?, description = ?, first_day = ?, first_time = ?, 
                         second_day = ?, second_time = ?, number_of_classes = ?, 
-                        duration = ?, tutor_id = ?, pricing = ?, cover_image_path = ?, status = 'Active'
-                      WHERE class_id = ?";
-    
+                        duration = ?, tutor_id = IF(?, ?, NULL), pricing = ?, cover_image_path = ?, status = 'Active'
+                    WHERE class_id = ?";
+
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$title, $description, $first_day, $first_time, $second_day, $second_time, $number_of_classes, $duration, $tutor, $pricing, $cover_image_path, $class_id]);
-    
+            $stmt->execute([$title, $description, $first_day, $first_time, $second_day, $second_time, $number_of_classes, $duration, $tutorExists ? $tutor : null, $tutorExists ? $tutor : null, $pricing, $cover_image_path, $class_id]);
+
             return true;
         } catch(PDOException $e) {
             // Throw the exception again so the controller can catch it
             throw $e;
         }
     }
+
 
     public function draftClass($class_id) {
         try {

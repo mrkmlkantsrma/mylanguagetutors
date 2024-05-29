@@ -26,9 +26,8 @@
                                 <address>
                                     <ul class="footer-link">
                                         <li><a href="tel:+15145471551">+1 819-635-5969</a></li>
-                                        <li><a href="#">Gatineau, Québec, Canada</a></li></li>
+                                        <li>Gatineau, Québec, Canada</li>
                                         <li><a href="mailto:contact@mylanguagetutor.ca">contact@mylanguagetutor.ca</a></li>
-                                        <li><a href="#">My Language Tutor is registered in the province of Québec under this legal name: 9488-5381 Québec inc.</a></li>
                                     </ul>
                                 </address>
                             </div>

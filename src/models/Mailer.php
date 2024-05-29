@@ -32,44 +32,22 @@ class Mailer
         $this->mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
     }
 
-    public function sendEmail($toAddress, $toName, $subject, $body)
+    public function sendEmail($toAddress, $toName, $subject, $body, $altBody)
     {
         try {
-    
-            // Add recipient and email content
             $this->mail->addAddress($toAddress, $toName);
             $this->mail->isHTML(true);
             $this->mail->Subject = $subject;
             $this->mail->Body = $body;
-    
-            // Attempt to send the email
-            $sent = $this->mail->send();
-    
-            if ($sent) {
-                return "success";
-            }
+            $this->mail->AltBody = $altBody;
+            $this->mail->send();
+            return "success";
         } catch (Exception $e) {
             // Log the error
+            error_log("Mailer Error: " . $e->getMessage());
             return "error";
         }
     }
-
-    // public function sendEmail($toAddress, $toName, $subject, $body)
-    // {
-    //     try {
-    //         $this->mail->addAddress($toAddress, $toName);
-    //         $this->mail->isHTML(true);
-    //         $this->mail->Subject = $subject;
-    //         $this->mail->Body = $body;
-    //         $sent  = $this->mail->send();
-    //         return "success ".$sent." check";
-    //     } catch (Exception $e) {
-    //         // Log the error
-    //         return $e->getMessage();
-    //         error_log("Mailer Error: " . $e->getMessage());
-    //         return "error";
-    //     }
-    // }
 
     public function getErrorInfo()
     {

@@ -229,6 +229,9 @@ function convertTo12HourFormat($time)
                                                                             <p>You're enrolled in this class</p>
                                                                     <?php endif; ?>
                                                                 </div>
+                                                                <?php if ($class['is_enrolled'] != 0): ?> <!-- Check if the student isn't enrolled -->
+                                                                    <a class="enrolled-groupclass-view" href="student-view-class.php?classId=<?php echo htmlspecialchars($class['class_id']); ?>">View</a>
+                                                                <?php endif; ?>
                                                                 <?php if ($class['enrolled_students_count'] < 10 && $class['is_enrolled'] == 0): ?> <!-- Check if less than 10 students are enrolled and the student isn't enrolled -->
                                                                         <button class="enroll-btn" onclick="enrollInClass('<?= $class['class_id'] ?>', '<?= $class['pricing'] ?>', this)">Enroll</button>
                                                                 <?php elseif ($class['is_enrolled'] == 0): ?>
