@@ -1,0 +1,64 @@
+.inp-wrap.sm label{
+    font-weight: bold;
+}
+.table-top{
+    margin: 20px 0;
+}
+.theme-table tbody tr {
+    height: 80px;
+    vertical-align: middle;
+}
+
+.actions {
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.actions span{
+    margin-right: 5px;
+}
+
+.theme-table tbody td {
+    position: relative;
+}
+
+.edit-action, .delete-action {
+    cursor: pointer;
+    color: blue;
+    font-size: 13px;
+}
+
+.theme-table tbody tr:hover .actions {
+    display: block;
+}
+
+.delete-action {
+    color: red; 
+}
+
+.group-classes a{
+    font-size: 18px;
+
+}
+
+.group-classes a:hover{
+    color: #6255a5;
+    
+}
+
+.group-classes .actions a{
+    font-size: 14px;
+    color: #fdb777;
+}
+
+.group-classes .actions button{
+    color: #fdb777;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.zoom-generate, .student-management{
+    margin-bottom: 30px;
+}
